@@ -1,0 +1,35 @@
+body {background-color: rgb(244, 244, 244); 
+    font-family: Arial, Helvetica, sans-serif;
+padding-top: 50px;}
+h1{color: rgb(46, 46, 46);}
+p{font-size: 20px;}
+img{border-radius: 15px;}
+.card{background-color: rgb(210, 209, 210);
+padding: 25px;
+width: 700px;
+margin: 20px auto;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);}
+h2{color: rgb(66, 67, 66);}
+button{background-color: royalblue;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 8px;
+font-size: 16px;}
+button:hover{background-color: darkblue;}
+.skills{display: flex;
+gap: 20px;
+flex-wrap: wrap;}
+.skills div{background-color: white;
+padding: 10px;
+border-radius: 10px;}
+.contact{display: flex;
+gap: 20px;
+flex-wrap: wrap;}
+.contact div{background-color: white;
+padding: 10px;
+border-radius: 10px;}
+a{text-decoration: none;
+font-size: 16px;}
+a:hover{color: red}
