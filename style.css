@@ -1,7 +1,9 @@
 body {background-color: rgb(244, 244, 244); 
     font-family: Arial, Helvetica, sans-serif;
 padding-top: 50px;}
-h1{color: rgb(46, 46, 46);}
+h1{color: rgb(46, 46, 46);
+font-size: 40px;}
+h3{font-size: 24px;}
 p{font-size: 20px;}
 img{border-radius: 15px;}
 .card{background-color: rgb(210, 209, 210);
@@ -20,13 +22,17 @@ font-size: 16px;}
 button:hover{background-color: darkblue;}
 .skills{display: flex;
 gap: 20px;
-flex-wrap: wrap;}
+justify-content: center;
+align-items: center;}
 .skills div{background-color: white;
 padding: 10px;
-border-radius: 10px;}
+border-radius: 10px;
+width: 120px;
+transition: 0.3s;}
+.skills div:hover{transform: translateY(-5px);}
 .contact{display: flex;
-gap: 20px;
-flex-wrap: wrap;}
+gap: 10px;
+flex-direction: column;}
 .contact div{background-color: white;
 padding: 10px;
 border-radius: 10px;}
