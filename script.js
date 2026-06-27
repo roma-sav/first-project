@@ -47,3 +47,20 @@ setInterval(function() {
         coinDisplay.innerText = coins;
     }
 }, 1000);
+let screen = document.getElementById("calcScreen");
+function pressSymbol(symbol) {
+    screen.value += symbol;
+    }
+    function clearScreen() {
+        screen.value = "";
+    }
+function calculate() {
+    try {
+        screen.value = eval(screen.value);
+    } catch (error) {
+        screen.value = "Ошибка";
+    }
+}
+function backspace() {
+    screen.value = screen.value.slice(0, -1);
+    }      

@@ -58,6 +58,29 @@
              <!-- Счетчик наших работающих майнеров -->
               <p>Авто-майнеров работает: <span id="minersCount">0</span></p>
         </div>
+        <div class="calculator">
+            <input type="text" id="calcScreen" readonly placeholder="0">
+            <div class="calc-buttons">
+                <button class="btn clear" onclick="clearScreen()">C</button>
+                <button class="btn operator" onclick="backspace()">⬅</button>
+                <button class="btn operator" onclick="pressSymbol('/')">/</button>
+                <button class="btn operator" onclick="pressSymbol('*')">*</button>
+                <button class="btn operator" onclick="pressSymbol('-')">-</button>
+                <button class="btn" onclick="pressSymbol('7')">7</button>
+                <button class="btn" onclick="pressSymbol('8')">8</button>
+                <button class="btn" onclick="pressSymbol('9')">9</button>
+                <button class="btn operator" onclick="pressSymbol('+')">+</button>
+                <button class="btn" onclick="pressSymbol('4')">4</button>
+                <button class="btn" onclick="pressSymbol('5')">5</button>
+                <button class="btn" onclick="pressSymbol('6')">6</button>
+                <button class="btn equal" id="equalBtn" onclick="calculate('')">=</button>
+                <button class="btn" onclick="pressSymbol('1')">1</button>
+                <button class="btn" onclick="pressSymbol('2')">2</button>
+                <button class="btn" onclick="pressSymbol('3')">3</button>
+                <button class="btn" onclick="pressSymbol('0')">0</button>
+                <button class="btn" onclick="pressSymbol('.')">.</button>
+            </div>
+        </div>
         </div>
         <script src="script.js"></script>
     </body>
