@@ -120,3 +120,46 @@ function loadTasks() {
     }
 }
 loadTasks();
+let cutyInput = document.getElementById("cityInput");
+let searchBtn = document.getElementById("searchBtn");
+let cityName = document.getElementById("cityName");
+let weatherIcon = document.getElementById("weatherIcon");
+let temperature = document.getElementById("temperature");
+let description = document.getElementById("description");
+const API_KEY = "e1e8862d6fda10c9321991bf5015e710";
+searchBtn.onclick = function() {
+    let city = cityInput.value.trim();
+    if (city === "") {
+        alert("Введите название города! 🏙️");
+        return;
+    }
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=ru`;
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                if (responce.status === 401) {
+                    throw new Error("Твой API-ключ еще не активирован");
+                } else if (responce.status === 404) {
+                    throw new Error("Город не найден");
+                } else {
+                    throw new Error("Что-то пошло не так");
+                }
+            }
+            return response.json();
+        })
+        .then(data => {
+            cityName.innerText = `${data.name}, ${data.sys.country}`;
+            temperature.innerText = `${Math.round(data.main.temp)}°C`;
+            description.innerText = data.weather[0].description;
+            let iconCode = data.weather[0].icon;
+            weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+            weatherIcon.style.display = "block";
+        })
+        .catch(error => {
+            alert(error.message);
+            cityName.innerText = "Ошибка";
+            temperature.innerText = "--°C";
+            description.innerText = "Попробуйте еще раз";
+            weatherIcon.style.display = "none";
+        });
+};
